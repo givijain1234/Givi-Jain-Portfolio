@@ -88,7 +88,7 @@ const PROJECTS: Project[] = [
     title: "Rate Limiter",
     description: "Traffic Control: Developed a system to manage the flow of requests to keep an app stable, implementing token bucket algorithms.",
     tech: ["Java", "Logic Design", "Algorithms"],
-    github: "https://github.com/givijain1234",
+    github: "https://github.com/givijain1234/rate-limiter-java",
     icon: <Shield className="w-6 h-6" />
   },
   {
@@ -546,15 +546,17 @@ export default function App() {
                 </div>
                 
                 <div className="flex gap-4">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-bold text-white hover:text-emerald-400 transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    Source Code
-                  </a>
+                  {!project.live && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-bold text-white hover:text-emerald-400 transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      Source Code
+                    </a>
+                  )}
                   {project.live && (
                     <a 
                       href={project.live} 
