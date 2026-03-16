@@ -194,6 +194,7 @@ const SKILLS = [
   { name: "REST API", category: "Backend" },
   { name: "API Integration", category: "Backend" },
   { name: "SQL", category: "Databases" },
+  { name: "MySQL", category: "Databases" },
   { name: "DBMS", category: "Databases" },
   { name: "DSA", category: "Core CS" },
   { name: "OOP", category: "Core CS" },
@@ -334,8 +335,6 @@ const SectionHeading = ({ title, subtitle }: { title: string, subtitle?: string 
 );
 
 export default function App() {
-  const [activeSkillCategory, setActiveSkillCategory] = useState("Languages");
-
   return (
     <div className="min-h-screen bg-[#050505] text-zinc-300 font-sans selection:bg-emerald-500/30 selection:text-emerald-400">
       <Navbar />
@@ -579,61 +578,25 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading title="Technical Arsenal" subtitle="Skills" />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Category Sidebar */}
-            <div className="lg:w-1/3 space-y-2">
-              {Array.from(new Set(SKILLS.map(s => s.category))).map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveSkillCategory(category)}
-                  className={`w-full text-left px-6 py-4 rounded-2xl transition-all duration-300 flex items-center justify-between group ${
-                    activeSkillCategory === category 
-                    ? 'bg-emerald-500 text-black font-bold shadow-[0_0_20px_rgba(16,185,129,0.2)]' 
-                    : 'text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300'
-                  }`}
-                >
-                  <span className="tracking-widest uppercase text-xs font-mono">{category}</span>
-                  <ChevronRight className={`w-4 h-4 transition-transform ${activeSkillCategory === category ? 'translate-x-1' : 'opacity-0 group-hover:opacity-100'}`} />
-                </button>
-              ))}
-            </div>
-
-            {/* Skills Display Area */}
-            <div className="lg:w-2/3 min-h-[400px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeSkillCategory}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-                >
-                  {SKILLS.filter(s => s.category === activeSkillCategory).map((skill, idx) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: idx * 0.05 }}
-                      className="p-6 bg-zinc-900/40 border border-zinc-800/50 rounded-2xl hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all group"
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-white font-bold text-lg">{skill.name}</span>
-                        <div className="w-2 h-2 rounded-full bg-emerald-500/20 group-hover:bg-emerald-500 transition-colors"></div>
-                      </div>
-                      <div className="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
-                        <motion.div 
-                          initial={{ width: 0 }}
-                          animate={{ width: '100%' }}
-                          transition={{ duration: 1, delay: idx * 0.1 }}
-                          className="h-full bg-emerald-500/50"
-                        ></motion.div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {SKILLS.map((skill, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.03 }}
+                className="group relative p-6 bg-zinc-900/40 border border-zinc-800/50 rounded-2xl hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all text-center"
+              >
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-emerald-500/20 group-hover:bg-emerald-500 transition-colors"></div>
+                <span className="text-white font-bold tracking-tight group-hover:text-emerald-400 transition-colors">
+                  {skill.name}
+                </span>
+                <p className="text-[10px] text-zinc-600 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {skill.category}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
