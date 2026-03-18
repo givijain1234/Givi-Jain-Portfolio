@@ -29,10 +29,18 @@ import {
   Zap,
   Wrench,
   Layout,
-  Twitter
+  Twitter,
+  GraduationCap
 } from 'lucide-react';
 
 // --- Types ---
+interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  score: string;
+  details?: string;
+}
 interface Project {
   title: string;
   description: string;
@@ -55,6 +63,29 @@ interface Certification {
 }
 
 // --- Data ---
+const EDUCATION: Education[] = [
+  {
+    degree: "Bachelor of Technology in Computer Science Engineering",
+    institution: "Acropolis Institute of Technology and Research, Indore (Affiliated to RGPV)",
+    period: "Nov 2022 – May 2026",
+    score: "CGPA: 7.8"
+  },
+  {
+    degree: "Senior Secondary (10+2)",
+    institution: "SICA School Scheme No. 78, Indore",
+    period: "2022",
+    score: "71.6%",
+    details: "CBSE Board • PCM + PE"
+  },
+  {
+    degree: "High School (10th)",
+    institution: "SICA School Scheme No. 78, Indore",
+    period: "2020",
+    score: "92.2%",
+    details: "CBSE Board"
+  }
+];
+
 const PROJECTS: Project[] = [
   {
     title: "CineMatch",
@@ -245,6 +276,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Education', href: '#education' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
@@ -412,7 +444,7 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 bg-zinc-950/50">
+      <section id="about" className="py-20 bg-zinc-950/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -468,12 +500,65 @@ export default function App() {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section id="education" className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <SectionHeading title="Academic Journey" subtitle="Education" />
+          
+          <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-800 before:to-transparent">
+            {EDUCATION.map((edu, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+              >
+                {/* Icon dot */}
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-800 bg-zinc-900 text-emerald-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 group-hover:border-emerald-500/50 transition-colors">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                
+                {/* Content */}
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:border-emerald-500/30 transition-all group-hover:bg-zinc-900/80">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                    <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      {edu.degree}
+                    </h3>
+                    <time className="font-mono text-[10px] text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full whitespace-nowrap self-start sm:self-center">
+                      {edu.period}
+                    </time>
+                  </div>
+                  
+                  <p className="text-emerald-400/80 font-medium mb-4 text-sm">
+                    {edu.institution}
+                  </p>
+                  
+                  <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex items-center gap-2 text-white font-bold text-sm bg-zinc-800/50 px-3 py-1 rounded-lg border border-zinc-700/50">
+                      <Zap className="w-3 h-3 text-emerald-500" />
+                      {edu.score}
+                    </div>
+                    {edu.details && (
+                      <div className="text-zinc-500 text-[10px] uppercase tracking-widest font-mono">
+                        {edu.details}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Experience Section */}
-      <section id="experience" className="py-32">
+      <section id="experience" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading title="Work History" subtitle="Experience" />
           
-          <div className="space-y-12">
+          <div className="space-y-8">
             {EXPERIENCES.map((exp, idx) => (
               <motion.div 
                 key={idx}
@@ -507,7 +592,7 @@ export default function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 bg-zinc-950/50">
+      <section id="projects" className="py-20 bg-zinc-950/50">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading title="Featured Work" subtitle="Projects" />
           
@@ -576,7 +661,7 @@ export default function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-32">
+      <section id="skills" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading title="Technical Arsenal" subtitle="Skills" />
           
@@ -604,7 +689,7 @@ export default function App() {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-32 bg-zinc-950/50">
+      <section id="certifications" className="py-20 bg-zinc-950/50">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading title="Recognitions" subtitle="Certifications" />
           
@@ -631,7 +716,7 @@ export default function App() {
       </section>
 
       {/* Footer / Contact Section */}
-      <footer id="contact" className="py-20 border-t border-zinc-900">
+      <footer id="contact" className="py-12 border-t border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="text-center md:text-left">
