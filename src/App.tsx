@@ -181,16 +181,6 @@ const PROJECTS: Project[] = [
 
 const EXPERIENCES: Experience[] = [
   {
-    role: "Associate Financial Consultant",
-    company: "Bizwit Research & Consulting LLP",
-    period: "Mar 2026 – Present",
-    description: [
-      "Analysed 50+ companies across Singapore and Malaysian markets using AI research tools.",
-      "Processed 10k+ market data points to identify industry trends and business insights.",
-      "Built structured datasets and reports supporting 8+ consulting research projects."
-    ]
-  },
-  {
     role: "Data Analyst Intern",
     company: "Internkaksha IT Solutions",
     period: "Dec 2023 - Feb 2024",
@@ -236,7 +226,14 @@ const SKILLS = [
   { name: "Git/GitHub", category: "Tools" },
   { name: "Postman", category: "Tools" },
   { name: "Tableau", category: "Tools" },
-  { name: "Power BI", category: "Tools" }
+  { name: "Power BI", category: "Tools" },
+  { name: "Google AI Studio", category: "AI & Cloud" },
+  { name: "ChatGPT", category: "AI & Cloud" },
+  { name: "Vercel", category: "AI & Cloud" },
+  { name: "Claude", category: "AI & Cloud" },
+  { name: "Gemini", category: "AI & Cloud" },
+  { name: "GitHub Copilot", category: "AI & Cloud" },
+  { name: "Prompt Engineering", category: "AI & Cloud" }
 ];
 
 const CERTIFICATIONS: Certification[] = [
