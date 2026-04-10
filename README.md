@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 👋 Hi, I'm Givi Jain
 
-# Run and deploy your AI Studio app
+🚀 Developer | Problem Solver | Tech Enthusiast  
 
-This contains everything you need to run your app locally.
+Welcome to my personal portfolio repository! This space represents who I am as a developer — my skills, projects, and the journey I’m building in tech.
 
-View your app in AI Studio: https://ai.studio/apps/2fd75498-8438-49d2-919d-534b3be38fe2
+🌐 **Portfolio:** https://givi-jain-portfolio.vercel.app/  
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## 🧑‍💻 About Me
+
+I’m a developer focused on building clean, scalable, and user-friendly applications.  
+Currently working as a **WordPress Developer**, I enjoy turning ideas into real-world products.
+
+I have a strong interest in:
+- Web Development  
+- Problem Solving (DSA)  
+- Building real-world projects  
+- Exploring modern tech stacks  
+
+I’m constantly learning and improving to become a better engineer every day.
+
+---
+
+## 📂 What You'll Find in My Portfolio
+
+- 🚀 Real-world projects with practical use cases  
+- 💡 Problem-solving approach in development  
+- 🎯 Clean UI/UX implementations  
+- 📈 Continuous growth and learning journey  
+
+---
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🎯 My Goal
+
+To build impactful products, grow as a developer, and work on meaningful projects that solve real-world problems.
+
+---
+
+## 📬 Let's Connect
+
+- 💼 LinkedIn: *https://www.linkedin.com/in/givi-jain-a39b70248/*  
+- 💻 GitHub: https://github.com/givijain1234  
+- 📧 Email: *givijain16@gmail.com*  
+
+---
+
+## ⭐ Support
+
+If you like my work, feel free to ⭐ this repository — it means a lot!
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
