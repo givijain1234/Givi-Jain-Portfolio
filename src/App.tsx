@@ -251,6 +251,7 @@ const CERTIFICATIONS: Certification[] = [
   { name: "AWS Academy Cloud Architecting", issuer: "AWS Academy" },
   { name: "Database Management Systems", issuer: "NPTEL" },
   { name: "The Full Stack Certification", issuer: "Meta" },
+  { name: "CRUD Operations in MongoDB", issuer: "MongoDB" },
   { name: "Crash Course on Python", issuer: "Google" },
   { name: "Cloud Computing Foundations", issuer: "Duke University" },
   { name: "Foundations of Data Science", issuer: "Google" },
