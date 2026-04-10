@@ -181,6 +181,16 @@ const PROJECTS: Project[] = [
 
 const EXPERIENCES: Experience[] = [
   {
+    role: "WordPress Developer",
+    company: "Detagenix Private Limited",
+    period: "Apr 2026 – Present",
+    description: [
+      "Designed and developed 3+ responsive WordPress websites using Elementor, focusing on clean UI/UX.",
+      "Customised and edited 10 and more web pages by implementing layouts, sections, and content as per requirements.",
+      "Performed updates, bug fixes, and design improvements to ensure smooth functionality and consistency."
+    ]
+  },
+  {
     role: "Data Analyst Intern",
     company: "Internkaksha IT Solutions",
     period: "Dec 2023 - Feb 2024",
@@ -411,7 +421,7 @@ export default function App() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <a 
-                href="https://drive.google.com/file/d/1npKTobNr7VpNa4X5riwX7xlWjc9VzS_D/view?usp=sharing" 
+                href="https://drive.google.com/file/d/1Pms54u6d5GQo8OTGB0hM6gF5DG1HU1Fp/view?usp=sharing" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl overflow-hidden transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
